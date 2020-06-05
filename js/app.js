@@ -3,13 +3,11 @@ import Tool from './tool.class.js';
 
 let paint  = new Paint("canvas");
 
-// Set defaults
 paint.activeTool = Tool.TOOL_LINE;
 paint.lineWidth = '1';
 paint.brushSize = '4';
 paint.selectedColor = '#000000';
 
-// initialize paint
 paint.init();
 
 document.querySelectorAll("[data-command]").forEach(
