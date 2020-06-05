@@ -12,26 +12,21 @@ export default class Paint {
         this.undoLimit = 3;
     }
 
-    // Setter functions
-    // To current active tool
     set activeTool(tool) {
         this.tool = tool;
     }
 
-    // To set current selected color
     set selectedColor(color) {
         this.color = color;
         this.context.fillStyle = this.color;
         this.context.strokeStyle = this.color;
     }
 
-    // To set shapes and pencel stroke size
     set lineWidth(lineWidth) {
         this._lineWidth = lineWidth;
 
     }
 
-    // To set brush stroke size
     set brushSize(brushSize) {
         this._brushSize = brushSize;
     }
@@ -130,6 +125,5 @@ export default class Paint {
             alert("No undo available");
         }
     }
-
     
 }
