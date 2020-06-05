@@ -6,14 +6,14 @@ export default class Utility{
         let x = e.clientX - rect.left;
         let y = e.clientY - rect.top;
         return new Point(x, y);
-        
+
     }
 
     static calcHypotenuse(startPos, endPos){
         return Math.sqrt( Math.pow(endPos.x - startPos.x, 2) + Math.pow(endPos.y - startPos.y, 2));
     }
 
-    
+
     static hexToRgba(hex) {
         var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
         return result ? [
@@ -28,10 +28,10 @@ export default class Utility{
 
         let imageData = context.getImageData(0, 0, context.canvas.width, context.canvas.height);
         if (x < 0 || y < 0 || x >= imageData.width || y >= imageData.height) {
-          return [-1, -1, -1, -1];  // impossible color
+          return [-1, -1, -1, -1];
         } else {
           const offset = (y * imageData.width + x) * 4;
-          
+
           return [imageData.data[offset + 0],
                   imageData.data[offset + 1],
                   imageData.data[offset + 2],
@@ -39,7 +39,7 @@ export default class Utility{
                 ]
         }
       }
-      
+
       static setPixel(context, x, y, color) {
         let imageData = context.getImageData(0, 0, context.canvas.width, context.canvas.height);
 
@@ -51,7 +51,7 @@ export default class Utility{
 
         context.putImageData(imageData, 0, 0);
       }
-      
+
       static colorsMatch(a, b) {
         return a[0] === b[0] && a[1] === b[1] && a[2] === b[2] && a[3] === b[3];
       }
